@@ -1,9 +1,7 @@
-name: BHTE_MLX
+name: BHTE
 channels:
-  - defaults
   - conda-forge
-  - https://repo.anaconda.com/pkgs/main
-  - https://repo.anaconda.com/pkgs/r
+  - defaults
 dependencies:
   - appnope=0.1.4=pyhd8ed1ab_1
   - asttokens=3.0.0=pyhd8ed1ab_1
@@ -37,6 +35,7 @@ dependencies:
   - nest-asyncio=1.6.0=pyhd8ed1ab_1
   - numpy=1.23.3=py39hcb4b507_0
   - openssl=3.4.0=h81ee809_1
+  - packaging=24.2=py39hca03da5_0
   - parso=0.8.4=pyhd8ed1ab_1
   - pexpect=4.9.0=pyhd8ed1ab_1
   - pickleshare=0.7.5=pyhd8ed1ab_1004
@@ -50,6 +49,7 @@ dependencies:
   - pyzmq=25.1.1=py39he0a3c8b_2
   - readline=8.1.2=h46ed386_0
   - scipy=1.9.1=py39h737da60_0
+  - six=1.16.0=pyhd3eb1b0_1
   - sqlite=3.40.0=h2229b38_0
   - stack_data=0.6.3=pyhd8ed1ab_1
   - tk=8.6.12=he1e0b03_0
@@ -65,29 +65,61 @@ dependencies:
       - aiohttp==3.8.3
       - aiosignal==1.3.1
       - altgraph==0.17.3
+      - anyio==4.8.0
       - appdirs==1.4.4
+      - argon2-cffi==23.1.0
+      - argon2-cffi-bindings==21.2.0
+      - arrow==1.3.0
+      - async-lru==2.0.4
       - async-timeout==4.0.2
-      - attrs==22.1.0
+      - attrs==25.1.0
+      - babel==2.17.0
       - babelviscofdtd==1.0.6
+      - beautifulsoup4==4.13.1
+      - bleach==6.2.0
       - certifi==2022.9.24
+      - cffi==1.17.1
       - charset-normalizer==2.1.1
       - chart-studio==1.1.0
       - click==8.1.3
       - cmake==3.29.0.1
       - contourpy==1.0.6
       - cycler==0.11.0
+      - defusedxml==0.7.1
+      - fastjsonschema==2.21.1
       - fonttools==4.38.0
+      - fqdn==1.5.1
       - frozenlist==1.3.3
       - ghp-import==2.1.0
+      - h11==0.14.0
       - h5py==3.7.0
       - hdf5plugin==3.3.1
       - histoprint==2.4.0
+      - httpcore==1.0.7
+      - httpx==0.28.1
       - idna==3.4
       - imageio==2.22.4
       - importlib-metadata==5.1.0
+      - ipywidgets==8.1.5
+      - isoduration==20.11.0
       - jinja2==3.1.2
       - joblib==1.2.0
+      - json5==0.10.0
+      - jsonpointer==3.0.0
+      - jsonschema==4.23.0
+      - jsonschema-specifications==2024.10.1
+      - jupyter==1.1.1
+      - jupyter-console==6.6.3
+      - jupyter-events==0.11.0
+      - jupyter-lsp==2.2.5
+      - jupyter-server==2.15.0
+      - jupyter-server-terminals==0.5.3
+      - jupyterlab==4.3.5
+      - jupyterlab-pygments==0.3.0
+      - jupyterlab-server==2.27.3
+      - jupyterlab-widgets==3.0.13
       - kiwisolver==1.4.4
+      - lab==8.3
       - latexcodec==2.0.1
       - linetimer==0.1.5
       - llvmlite==0.39.1
@@ -97,7 +129,8 @@ dependencies:
       - matplotlib==3.6.2
       - md4mathjax==0.1.3
       - mergedeep==1.3.4
-      - metalcomputebabel==0.2.3.post1
+      - metalcomputebabel @ git+https://github.com/ProteusMRIgHIFU/py-metal-compute.git@75a6adb378a8155c9b6765df8626256f42216224
+      - mistune==3.1.1
       - mkdocs==1.4.2
       - mkdocs-bibtex==2.8.10
       - mkdocs-gitbook==0.0.1
@@ -106,18 +139,26 @@ dependencies:
       - mkdocs-windmill==1.0.5
       - mlx==0.22.0
       - multidict==6.0.2
+      - nbclient==0.10.2
+      - nbconvert==7.16.6
+      - nbformat==5.10.4
       - networkx==2.8.8
       - nibabel==5.2.1
+      - notebook==7.3.2
+      - notebook-shim==0.2.4
       - numba==0.56.2
       - numpy-stl==2.17.1
-      - packaging==21.3
+      - overrides==7.7.0
       - pandas==1.5.0
+      - pandocfilters==1.5.1
       - patsy==0.5.3
       - pillow==9.3.0
       - platformdirs==2.5.4
       - plotly==5.11.0
       - pooch==1.6.0
+      - prometheus-client==0.21.1
       - pybtex==0.24.0
+      - pycparser==2.22
       - pydicom==2.4.4
       - pygments==2.13.0
       - pyinstaller==6.1.0
@@ -131,6 +172,7 @@ dependencies:
       - pyside6-addons==6.4.1
       - pyside6-essentials==6.4.1
       - python-dateutil==2.8.2
+      - python-json-logger==3.2.1
       - python-markdown-math==0.8
       - python-utils==3.4.5
       - pytools==2022.1.13
@@ -140,29 +182,44 @@ dependencies:
       - pyyaml==6.0
       - pyyaml-env-tag==0.1
       - qtpy==2.3.0
-      - requests==2.28.1
+      - referencing==0.36.2
+      - requests==2.32.3
       - retrying==1.3.3
+      - rfc3339-validator==0.1.4
+      - rfc3986-validator==0.1.1
+      - rpds-py==0.22.3
       - scikit-image==0.19.3
       - scikit-learn==1.1.3
       - scooby==0.7.0
+      - send2trash==1.8.3
       - setuptools==59.8.0
       - shiboken6==6.4.1
       - simpleitk==2.3.1
-      - six==1.16.0
+      - simplejson==3.19.3
+      - sniffio==1.3.1
+      - soupsieve==2.6
       - statsmodels==0.13.5
       - superqt==0.4.0
       - tenacity==8.1.0
+      - terminado==0.18.1
       - threadpoolctl==3.1.0
       - tifffile==2022.10.10
+      - tinycss2==1.4.0
+      - tomli==2.2.1
       - trimesh==3.22.3
-      - typing-extensions==4.4.0
+      - txt2tags==3.9
+      - types-python-dateutil==2.9.0.20241206
       - uhi==0.3.2
+      - uri-template==1.3.0
       - urllib3==1.26.12
       - validators==0.20.0
       - vtk==9.1.0
       - watchdog==2.1.9
-      - webcolors==1.12
+      - webcolors==24.11.1
+      - webencodings==0.5.1
+      - websocket-client==1.8.0
+      - widgetsnbextension==4.0.13
       - wslink==1.9.1
       - yarl==1.8.1
       - zipp==3.11.0
-prefix: /Users/acoreas/opt/anaconda3/envs/BHTE_MLX
+prefix: /Users/spichardo/miniconda3/envs/BHTE
