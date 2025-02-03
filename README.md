@@ -15,7 +15,7 @@ $$
 
 The equation is solved with forward-step solution  $\theta_m(T+t_0)$. This means the GPU kernel is called thousands of times as the thermal map $\theta_m$ is updated in small temporal $\delta t$ steps.
 
-Currently the MLX solution is 3x slower than the pymetal-compute solution. py-metal-compute library uses a closer-to-the hardware implementation (using Swift functions) where we have a bit more control of command buffer creation. MLX uses the new `mx.fast.metal_kernel` function to use custom kernels, and it uses a "lazy computation" approach. 
+In this example, the MLX solution is 2.5x slower than the pymetal-compute solution. py-metal-compute library uses a closer-to-the hardware implementation (using Swift functions) where we have a bit more control of command buffer creation. MLX uses the new `mx.fast.metal_kernel` function to use custom kernels, and it uses a "lazy computation" approach. 
 
 The difference in the execution model shows when with MLX with an apparent faster iterations through 12000 calls to the kernel, but then performance takes a hit when results are recovered to Numpy arrays.  We need to interface with Numpy arrays as this code is part of much more complex software for the treatment planning of transcranial ultrasound stimulation ([BabelBrain](https://github.com/ProteusMRIgHIFU/BabelBrain)). py-metal-compute takes more time to complete the 12000 calls to the kernel, but the overall wall-time is less than 1/2 that of Metal.
 
